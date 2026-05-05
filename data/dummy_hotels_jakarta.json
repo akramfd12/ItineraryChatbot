@@ -1,0 +1,2309 @@
+[
+  {
+    "hotel_id": "HTL001",
+    "name": "Royal Jakarta Hotel 1",
+    "city": "Jakarta",
+    "area": "Kemang",
+    "price_per_night": 1169346,
+    "rating": 4.4,
+    "stars": 3,
+    "amenities": [
+      "Pool",
+      "Bar",
+      "Gym",
+      "Spa",
+      "Restaurant",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL002",
+    "name": "Golden Jakarta Hotel 2",
+    "city": "Jakarta",
+    "area": "Thamrin",
+    "price_per_night": 1822573,
+    "rating": 4.7,
+    "stars": 4,
+    "amenities": [
+      "WiFi",
+      "Airport Shuttle",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL003",
+    "name": "Grand Jakarta Hotel 3",
+    "city": "Jakarta",
+    "area": "Blok M",
+    "price_per_night": 1959500,
+    "rating": 3.7,
+    "stars": 4,
+    "amenities": [
+      "Airport Shuttle",
+      "Restaurant",
+      "Parking",
+      "Gym",
+      "Bar",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL004",
+    "name": "Premier Jakarta Hotel 4",
+    "city": "Jakarta",
+    "area": "Menteng",
+    "price_per_night": 647495,
+    "rating": 3.9,
+    "stars": 3,
+    "amenities": [
+      "Bar",
+      "Restaurant",
+      "Parking",
+      "Spa",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL005",
+    "name": "Golden Jakarta Hotel 5",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 1981269,
+    "rating": 4.1,
+    "stars": 5,
+    "amenities": [
+      "Parking",
+      "Gym",
+      "Restaurant",
+      "Pool",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL006",
+    "name": "Urban Jakarta Hotel 6",
+    "city": "Jakarta",
+    "area": "Thamrin",
+    "price_per_night": 1774904,
+    "rating": 4.0,
+    "stars": 4,
+    "amenities": [
+      "WiFi",
+      "Restaurant",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL007",
+    "name": "Premier Jakarta Hotel 7",
+    "city": "Jakarta",
+    "area": "Sudirman",
+    "price_per_night": 1729199,
+    "rating": 4.4,
+    "stars": 5,
+    "amenities": [
+      "Parking",
+      "Pool",
+      "Restaurant",
+      "Bar",
+      "Gym",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL008",
+    "name": "Heritage Jakarta Hotel 8",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 1999985,
+    "rating": 4.0,
+    "stars": 5,
+    "amenities": [
+      "Airport Shuttle",
+      "Gym",
+      "Spa",
+      "Bar"
+    ]
+  },
+  {
+    "hotel_id": "HTL009",
+    "name": "Royal Jakarta Hotel 9",
+    "city": "Jakarta",
+    "area": "Menteng",
+    "price_per_night": 614300,
+    "rating": 4.2,
+    "stars": 3,
+    "amenities": [
+      "Pool",
+      "Bar",
+      "Gym",
+      "Parking",
+      "Restaurant"
+    ]
+  },
+  {
+    "hotel_id": "HTL010",
+    "name": "Premier Jakarta Hotel 10",
+    "city": "Jakarta",
+    "area": "Sudirman",
+    "price_per_night": 1290117,
+    "rating": 4.9,
+    "stars": 5,
+    "amenities": [
+      "Restaurant",
+      "Parking",
+      "Gym",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL011",
+    "name": "Premier Jakarta Hotel 11",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 950617,
+    "rating": 4.2,
+    "stars": 5,
+    "amenities": [
+      "Bar",
+      "Parking",
+      "Restaurant",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL012",
+    "name": "Grand Jakarta Hotel 12",
+    "city": "Jakarta",
+    "area": "Senayan",
+    "price_per_night": 1133530,
+    "rating": 4.8,
+    "stars": 4,
+    "amenities": [
+      "Airport Shuttle",
+      "Spa",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL013",
+    "name": "Premier Jakarta Hotel 13",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 1008632,
+    "rating": 4.8,
+    "stars": 3,
+    "amenities": [
+      "Restaurant",
+      "Parking",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL014",
+    "name": "Golden Jakarta Hotel 14",
+    "city": "Jakarta",
+    "area": "Thamrin",
+    "price_per_night": 1442807,
+    "rating": 4.4,
+    "stars": 3,
+    "amenities": [
+      "WiFi",
+      "Airport Shuttle",
+      "Parking",
+      "Pool",
+      "Bar"
+    ]
+  },
+  {
+    "hotel_id": "HTL015",
+    "name": "Heritage Jakarta Hotel 15",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 1319827,
+    "rating": 3.6,
+    "stars": 3,
+    "amenities": [
+      "Airport Shuttle",
+      "WiFi",
+      "Spa",
+      "Gym",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL016",
+    "name": "Skyline Jakarta Hotel 16",
+    "city": "Jakarta",
+    "area": "Thamrin",
+    "price_per_night": 1633859,
+    "rating": 4.6,
+    "stars": 4,
+    "amenities": [
+      "Bar",
+      "WiFi",
+      "Spa",
+      "Pool",
+      "Parking",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL017",
+    "name": "Heritage Jakarta Hotel 17",
+    "city": "Jakarta",
+    "area": "Kemang",
+    "price_per_night": 1624976,
+    "rating": 4.6,
+    "stars": 4,
+    "amenities": [
+      "Pool",
+      "Airport Shuttle",
+      "Parking",
+      "Spa",
+      "Restaurant"
+    ]
+  },
+  {
+    "hotel_id": "HTL018",
+    "name": "Urban Jakarta Hotel 18",
+    "city": "Jakarta",
+    "area": "Menteng",
+    "price_per_night": 1063485,
+    "rating": 4.9,
+    "stars": 3,
+    "amenities": [
+      "Pool",
+      "WiFi",
+      "Parking",
+      "Gym",
+      "Bar",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL019",
+    "name": "Grand Jakarta Hotel 19",
+    "city": "Jakarta",
+    "area": "Kemang",
+    "price_per_night": 1614894,
+    "rating": 3.6,
+    "stars": 3,
+    "amenities": [
+      "Spa",
+      "Parking",
+      "Airport Shuttle",
+      "Restaurant"
+    ]
+  },
+  {
+    "hotel_id": "HTL020",
+    "name": "Premier Jakarta Hotel 20",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 1137836,
+    "rating": 4.9,
+    "stars": 4,
+    "amenities": [
+      "Restaurant",
+      "Airport Shuttle",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL021",
+    "name": "Skyline Jakarta Hotel 21",
+    "city": "Jakarta",
+    "area": "Senayan",
+    "price_per_night": 1579026,
+    "rating": 4.3,
+    "stars": 4,
+    "amenities": [
+      "WiFi",
+      "Airport Shuttle",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL022",
+    "name": "Elite Jakarta Hotel 22",
+    "city": "Jakarta",
+    "area": "Sudirman",
+    "price_per_night": 1812009,
+    "rating": 4.7,
+    "stars": 3,
+    "amenities": [
+      "Bar",
+      "Spa",
+      "WiFi",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL023",
+    "name": "Golden Jakarta Hotel 23",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 1692417,
+    "rating": 4.7,
+    "stars": 3,
+    "amenities": [
+      "Airport Shuttle",
+      "Restaurant",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL024",
+    "name": "Comfort Jakarta Hotel 24",
+    "city": "Jakarta",
+    "area": "Blok M",
+    "price_per_night": 476894,
+    "rating": 4.3,
+    "stars": 4,
+    "amenities": [
+      "WiFi",
+      "Bar",
+      "Parking",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL025",
+    "name": "Golden Jakarta Hotel 25",
+    "city": "Jakarta",
+    "area": "Sudirman",
+    "price_per_night": 582198,
+    "rating": 4.5,
+    "stars": 5,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Gym",
+      "Pool",
+      "Airport Shuttle",
+      "Restaurant"
+    ]
+  },
+  {
+    "hotel_id": "HTL026",
+    "name": "Heritage Jakarta Hotel 26",
+    "city": "Jakarta",
+    "area": "Senayan",
+    "price_per_night": 528711,
+    "rating": 4.8,
+    "stars": 3,
+    "amenities": [
+      "Spa",
+      "WiFi",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL027",
+    "name": "Royal Jakarta Hotel 27",
+    "city": "Jakarta",
+    "area": "Menteng",
+    "price_per_night": 1649522,
+    "rating": 3.7,
+    "stars": 4,
+    "amenities": [
+      "Spa",
+      "Restaurant",
+      "Bar",
+      "Airport Shuttle",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL028",
+    "name": "Luxury Jakarta Hotel 28",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 699632,
+    "rating": 3.7,
+    "stars": 4,
+    "amenities": [
+      "WiFi",
+      "Bar",
+      "Parking",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL029",
+    "name": "Comfort Jakarta Hotel 29",
+    "city": "Jakarta",
+    "area": "Thamrin",
+    "price_per_night": 646922,
+    "rating": 4.4,
+    "stars": 5,
+    "amenities": [
+      "Bar",
+      "Parking",
+      "WiFi",
+      "Spa",
+      "Pool",
+      "Restaurant"
+    ]
+  },
+  {
+    "hotel_id": "HTL030",
+    "name": "Skyline Jakarta Hotel 30",
+    "city": "Jakarta",
+    "area": "Kuningan",
+    "price_per_night": 764524,
+    "rating": 3.9,
+    "stars": 4,
+    "amenities": [
+      "Bar",
+      "Gym",
+      "Pool",
+      "Parking",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL031",
+    "name": "Urban Jakarta Hotel 31",
+    "city": "Jakarta",
+    "area": "Thamrin",
+    "price_per_night": 1907504,
+    "rating": 4.4,
+    "stars": 4,
+    "amenities": [
+      "Pool",
+      "Spa",
+      "Gym",
+      "Parking",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL032",
+    "name": "Heritage Jakarta Hotel 32",
+    "city": "Jakarta",
+    "area": "Menteng",
+    "price_per_night": 1946766,
+    "rating": 4.5,
+    "stars": 5,
+    "amenities": [
+      "Parking",
+      "Bar",
+      "Restaurant",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL033",
+    "name": "Elite Jakarta Hotel 33",
+    "city": "Jakarta",
+    "area": "Kuningan",
+    "price_per_night": 871252,
+    "rating": 3.8,
+    "stars": 5,
+    "amenities": [
+      "Pool",
+      "Airport Shuttle",
+      "Spa",
+      "Parking",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL034",
+    "name": "Skyline Jakarta Hotel 34",
+    "city": "Jakarta",
+    "area": "Kuningan",
+    "price_per_night": 1208125,
+    "rating": 3.6,
+    "stars": 5,
+    "amenities": [
+      "Bar",
+      "Pool",
+      "Airport Shuttle",
+      "Parking",
+      "Restaurant"
+    ]
+  },
+  {
+    "hotel_id": "HTL035",
+    "name": "Heritage Jakarta Hotel 35",
+    "city": "Jakarta",
+    "area": "Menteng",
+    "price_per_night": 467377,
+    "rating": 4.7,
+    "stars": 4,
+    "amenities": [
+      "WiFi",
+      "Bar",
+      "Restaurant",
+      "Parking",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL036",
+    "name": "Heritage Jakarta Hotel 36",
+    "city": "Jakarta",
+    "area": "Menteng",
+    "price_per_night": 1494613,
+    "rating": 4.0,
+    "stars": 3,
+    "amenities": [
+      "Bar",
+      "WiFi",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL037",
+    "name": "Premier Jakarta Hotel 37",
+    "city": "Jakarta",
+    "area": "Senayan",
+    "price_per_night": 319748,
+    "rating": 3.9,
+    "stars": 5,
+    "amenities": [
+      "Restaurant",
+      "Parking",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL038",
+    "name": "Heritage Jakarta Hotel 38",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 364931,
+    "rating": 4.7,
+    "stars": 5,
+    "amenities": [
+      "Parking",
+      "Pool",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL039",
+    "name": "Urban Jakarta Hotel 39",
+    "city": "Jakarta",
+    "area": "Thamrin",
+    "price_per_night": 972976,
+    "rating": 4.6,
+    "stars": 4,
+    "amenities": [
+      "Spa",
+      "WiFi",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL040",
+    "name": "Heritage Jakarta Hotel 40",
+    "city": "Jakarta",
+    "area": "Thamrin",
+    "price_per_night": 747913,
+    "rating": 4.9,
+    "stars": 5,
+    "amenities": [
+      "Gym",
+      "Restaurant",
+      "WiFi",
+      "Pool",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL041",
+    "name": "Royal Jakarta Hotel 41",
+    "city": "Jakarta",
+    "area": "Kemang",
+    "price_per_night": 694882,
+    "rating": 3.5,
+    "stars": 5,
+    "amenities": [
+      "Bar",
+      "WiFi",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL042",
+    "name": "Royal Jakarta Hotel 42",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 1593679,
+    "rating": 4.8,
+    "stars": 3,
+    "amenities": [
+      "Airport Shuttle",
+      "WiFi",
+      "Bar",
+      "Restaurant"
+    ]
+  },
+  {
+    "hotel_id": "HTL043",
+    "name": "Elite Jakarta Hotel 43",
+    "city": "Jakarta",
+    "area": "Sudirman",
+    "price_per_night": 492818,
+    "rating": 4.2,
+    "stars": 3,
+    "amenities": [
+      "Pool",
+      "Bar",
+      "WiFi",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL044",
+    "name": "Comfort Jakarta Hotel 44",
+    "city": "Jakarta",
+    "area": "Senayan",
+    "price_per_night": 753635,
+    "rating": 4.9,
+    "stars": 3,
+    "amenities": [
+      "Pool",
+      "WiFi",
+      "Restaurant",
+      "Bar"
+    ]
+  },
+  {
+    "hotel_id": "HTL045",
+    "name": "Luxury Jakarta Hotel 45",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 1548470,
+    "rating": 3.6,
+    "stars": 5,
+    "amenities": [
+      "Bar",
+      "Restaurant",
+      "Parking",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL046",
+    "name": "Elite Jakarta Hotel 46",
+    "city": "Jakarta",
+    "area": "Blok M",
+    "price_per_night": 1224861,
+    "rating": 4.8,
+    "stars": 4,
+    "amenities": [
+      "WiFi",
+      "Bar",
+      "Pool",
+      "Parking",
+      "Restaurant"
+    ]
+  },
+  {
+    "hotel_id": "HTL047",
+    "name": "Comfort Jakarta Hotel 47",
+    "city": "Jakarta",
+    "area": "Kuningan",
+    "price_per_night": 1209492,
+    "rating": 4.0,
+    "stars": 5,
+    "amenities": [
+      "WiFi",
+      "Restaurant",
+      "Parking",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL048",
+    "name": "Comfort Jakarta Hotel 48",
+    "city": "Jakarta",
+    "area": "Menteng",
+    "price_per_night": 663955,
+    "rating": 4.6,
+    "stars": 3,
+    "amenities": [
+      "Parking",
+      "WiFi",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL049",
+    "name": "Grand Jakarta Hotel 49",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 1879369,
+    "rating": 4.0,
+    "stars": 5,
+    "amenities": [
+      "WiFi",
+      "Bar",
+      "Gym",
+      "Restaurant",
+      "Airport Shuttle",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL050",
+    "name": "Urban Jakarta Hotel 50",
+    "city": "Jakarta",
+    "area": "Kuningan",
+    "price_per_night": 1122873,
+    "rating": 3.6,
+    "stars": 4,
+    "amenities": [
+      "Restaurant",
+      "Gym",
+      "Airport Shuttle",
+      "Bar"
+    ]
+  },
+  {
+    "hotel_id": "HTL051",
+    "name": "Urban Jakarta Hotel 51",
+    "city": "Jakarta",
+    "area": "Blok M",
+    "price_per_night": 398488,
+    "rating": 3.7,
+    "stars": 3,
+    "amenities": [
+      "Restaurant",
+      "Spa",
+      "Pool",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL052",
+    "name": "Heritage Jakarta Hotel 52",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 1261098,
+    "rating": 3.5,
+    "stars": 4,
+    "amenities": [
+      "Spa",
+      "Parking",
+      "Gym",
+      "Pool",
+      "Restaurant"
+    ]
+  },
+  {
+    "hotel_id": "HTL053",
+    "name": "Premier Jakarta Hotel 53",
+    "city": "Jakarta",
+    "area": "Senayan",
+    "price_per_night": 904070,
+    "rating": 4.7,
+    "stars": 3,
+    "amenities": [
+      "Airport Shuttle",
+      "Pool",
+      "Restaurant",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL054",
+    "name": "Urban Jakarta Hotel 54",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 1414671,
+    "rating": 4.8,
+    "stars": 5,
+    "amenities": [
+      "Pool",
+      "Spa",
+      "Restaurant",
+      "Bar"
+    ]
+  },
+  {
+    "hotel_id": "HTL055",
+    "name": "Urban Jakarta Hotel 55",
+    "city": "Jakarta",
+    "area": "Senayan",
+    "price_per_night": 646050,
+    "rating": 4.5,
+    "stars": 5,
+    "amenities": [
+      "Bar",
+      "Pool",
+      "Parking",
+      "Restaurant",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL056",
+    "name": "Heritage Jakarta Hotel 56",
+    "city": "Jakarta",
+    "area": "Sudirman",
+    "price_per_night": 727710,
+    "rating": 4.8,
+    "stars": 3,
+    "amenities": [
+      "Airport Shuttle",
+      "Pool",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL057",
+    "name": "Royal Jakarta Hotel 57",
+    "city": "Jakarta",
+    "area": "Cikini",
+    "price_per_night": 1909452,
+    "rating": 3.7,
+    "stars": 4,
+    "amenities": [
+      "WiFi",
+      "Gym",
+      "Restaurant",
+      "Bar",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL058",
+    "name": "Elite Jakarta Hotel 58",
+    "city": "Jakarta",
+    "area": "Thamrin",
+    "price_per_night": 1408876,
+    "rating": 3.9,
+    "stars": 3,
+    "amenities": [
+      "Airport Shuttle",
+      "Parking",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL059",
+    "name": "Premier Jakarta Hotel 59",
+    "city": "Jakarta",
+    "area": "Cikini",
+    "price_per_night": 470038,
+    "rating": 4.2,
+    "stars": 4,
+    "amenities": [
+      "Spa",
+      "Restaurant",
+      "Airport Shuttle",
+      "Parking",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL060",
+    "name": "Skyline Jakarta Hotel 60",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 547050,
+    "rating": 3.6,
+    "stars": 4,
+    "amenities": [
+      "Gym",
+      "Bar",
+      "Pool",
+      "Restaurant",
+      "Parking",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL061",
+    "name": "Premier Jakarta Hotel 61",
+    "city": "Jakarta",
+    "area": "Sudirman",
+    "price_per_night": 1931395,
+    "rating": 3.6,
+    "stars": 5,
+    "amenities": [
+      "WiFi",
+      "Spa",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL062",
+    "name": "Urban Jakarta Hotel 62",
+    "city": "Jakarta",
+    "area": "Kemang",
+    "price_per_night": 1008175,
+    "rating": 4.5,
+    "stars": 4,
+    "amenities": [
+      "Bar",
+      "Gym",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL063",
+    "name": "Comfort Jakarta Hotel 63",
+    "city": "Jakarta",
+    "area": "Kuningan",
+    "price_per_night": 1380625,
+    "rating": 3.7,
+    "stars": 4,
+    "amenities": [
+      "Gym",
+      "Pool",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL064",
+    "name": "Royal Jakarta Hotel 64",
+    "city": "Jakarta",
+    "area": "Kemang",
+    "price_per_night": 1010951,
+    "rating": 4.9,
+    "stars": 5,
+    "amenities": [
+      "Restaurant",
+      "Pool",
+      "Airport Shuttle",
+      "Spa",
+      "Parking",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL065",
+    "name": "Premier Jakarta Hotel 65",
+    "city": "Jakarta",
+    "area": "Menteng",
+    "price_per_night": 1043898,
+    "rating": 4.8,
+    "stars": 5,
+    "amenities": [
+      "Bar",
+      "Parking",
+      "Airport Shuttle",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL066",
+    "name": "Comfort Jakarta Hotel 66",
+    "city": "Jakarta",
+    "area": "Senayan",
+    "price_per_night": 1501978,
+    "rating": 4.6,
+    "stars": 5,
+    "amenities": [
+      "Bar",
+      "Parking",
+      "Pool",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL067",
+    "name": "Elite Jakarta Hotel 67",
+    "city": "Jakarta",
+    "area": "Kemang",
+    "price_per_night": 934934,
+    "rating": 4.7,
+    "stars": 4,
+    "amenities": [
+      "Parking",
+      "WiFi",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL068",
+    "name": "Golden Jakarta Hotel 68",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 1686036,
+    "rating": 3.9,
+    "stars": 5,
+    "amenities": [
+      "Gym",
+      "Restaurant",
+      "Pool",
+      "Parking",
+      "Bar",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL069",
+    "name": "Golden Jakarta Hotel 69",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 1250016,
+    "rating": 4.2,
+    "stars": 4,
+    "amenities": [
+      "Airport Shuttle",
+      "Restaurant",
+      "Spa",
+      "Gym",
+      "Bar"
+    ]
+  },
+  {
+    "hotel_id": "HTL070",
+    "name": "Elite Jakarta Hotel 70",
+    "city": "Jakarta",
+    "area": "Menteng",
+    "price_per_night": 1149296,
+    "rating": 4.3,
+    "stars": 5,
+    "amenities": [
+      "Bar",
+      "Gym",
+      "WiFi",
+      "Pool",
+      "Parking",
+      "Restaurant"
+    ]
+  },
+  {
+    "hotel_id": "HTL071",
+    "name": "Grand Jakarta Hotel 71",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 636924,
+    "rating": 4.0,
+    "stars": 5,
+    "amenities": [
+      "Airport Shuttle",
+      "Pool",
+      "WiFi",
+      "Restaurant",
+      "Parking",
+      "Bar"
+    ]
+  },
+  {
+    "hotel_id": "HTL072",
+    "name": "Elite Jakarta Hotel 72",
+    "city": "Jakarta",
+    "area": "Kuningan",
+    "price_per_night": 766166,
+    "rating": 4.9,
+    "stars": 4,
+    "amenities": [
+      "Pool",
+      "Spa",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL073",
+    "name": "Luxury Jakarta Hotel 73",
+    "city": "Jakarta",
+    "area": "Menteng",
+    "price_per_night": 864374,
+    "rating": 4.2,
+    "stars": 3,
+    "amenities": [
+      "Pool",
+      "Parking",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL074",
+    "name": "Skyline Jakarta Hotel 74",
+    "city": "Jakarta",
+    "area": "Cikini",
+    "price_per_night": 551141,
+    "rating": 3.5,
+    "stars": 3,
+    "amenities": [
+      "Parking",
+      "Bar",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL075",
+    "name": "Grand Jakarta Hotel 75",
+    "city": "Jakarta",
+    "area": "Senayan",
+    "price_per_night": 1803036,
+    "rating": 3.7,
+    "stars": 4,
+    "amenities": [
+      "Pool",
+      "Gym",
+      "WiFi",
+      "Restaurant",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL076",
+    "name": "Comfort Jakarta Hotel 76",
+    "city": "Jakarta",
+    "area": "Cikini",
+    "price_per_night": 1285983,
+    "rating": 4.6,
+    "stars": 3,
+    "amenities": [
+      "Parking",
+      "Airport Shuttle",
+      "WiFi",
+      "Bar",
+      "Pool",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL077",
+    "name": "Golden Jakarta Hotel 77",
+    "city": "Jakarta",
+    "area": "Kuningan",
+    "price_per_night": 1249913,
+    "rating": 4.3,
+    "stars": 5,
+    "amenities": [
+      "Bar",
+      "WiFi",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL078",
+    "name": "Heritage Jakarta Hotel 78",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 1473215,
+    "rating": 4.3,
+    "stars": 5,
+    "amenities": [
+      "Parking",
+      "Gym",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL079",
+    "name": "Golden Jakarta Hotel 79",
+    "city": "Jakarta",
+    "area": "Sudirman",
+    "price_per_night": 1995565,
+    "rating": 3.6,
+    "stars": 3,
+    "amenities": [
+      "WiFi",
+      "Bar",
+      "Restaurant",
+      "Gym",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL080",
+    "name": "Heritage Jakarta Hotel 80",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 1602202,
+    "rating": 3.5,
+    "stars": 4,
+    "amenities": [
+      "WiFi",
+      "Bar",
+      "Restaurant",
+      "Pool",
+      "Spa",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL081",
+    "name": "Comfort Jakarta Hotel 81",
+    "city": "Jakarta",
+    "area": "Blok M",
+    "price_per_night": 1610728,
+    "rating": 4.3,
+    "stars": 4,
+    "amenities": [
+      "Spa",
+      "Airport Shuttle",
+      "Parking",
+      "Bar",
+      "Gym",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL082",
+    "name": "Golden Jakarta Hotel 82",
+    "city": "Jakarta",
+    "area": "Cikini",
+    "price_per_night": 726561,
+    "rating": 3.9,
+    "stars": 5,
+    "amenities": [
+      "Restaurant",
+      "Parking",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL083",
+    "name": "Skyline Jakarta Hotel 83",
+    "city": "Jakarta",
+    "area": "Sudirman",
+    "price_per_night": 1569859,
+    "rating": 3.8,
+    "stars": 4,
+    "amenities": [
+      "Airport Shuttle",
+      "Parking",
+      "Bar",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL084",
+    "name": "Urban Jakarta Hotel 84",
+    "city": "Jakarta",
+    "area": "Kemang",
+    "price_per_night": 1649073,
+    "rating": 4.8,
+    "stars": 5,
+    "amenities": [
+      "Airport Shuttle",
+      "WiFi",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL085",
+    "name": "Elite Jakarta Hotel 85",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 720618,
+    "rating": 4.6,
+    "stars": 3,
+    "amenities": [
+      "Bar",
+      "WiFi",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL086",
+    "name": "Royal Jakarta Hotel 86",
+    "city": "Jakarta",
+    "area": "Kemang",
+    "price_per_night": 640590,
+    "rating": 4.3,
+    "stars": 3,
+    "amenities": [
+      "Bar",
+      "Gym",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL087",
+    "name": "Golden Jakarta Hotel 87",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 520790,
+    "rating": 4.9,
+    "stars": 4,
+    "amenities": [
+      "Spa",
+      "Restaurant",
+      "Parking",
+      "Airport Shuttle",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL088",
+    "name": "Urban Jakarta Hotel 88",
+    "city": "Jakarta",
+    "area": "Blok M",
+    "price_per_night": 1418713,
+    "rating": 4.6,
+    "stars": 5,
+    "amenities": [
+      "Spa",
+      "WiFi",
+      "Restaurant",
+      "Parking",
+      "Gym",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL089",
+    "name": "Elite Jakarta Hotel 89",
+    "city": "Jakarta",
+    "area": "Cikini",
+    "price_per_night": 1791959,
+    "rating": 3.5,
+    "stars": 4,
+    "amenities": [
+      "Restaurant",
+      "Pool",
+      "Gym",
+      "WiFi",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL090",
+    "name": "Comfort Jakarta Hotel 90",
+    "city": "Jakarta",
+    "area": "Cikini",
+    "price_per_night": 1922667,
+    "rating": 4.0,
+    "stars": 3,
+    "amenities": [
+      "Restaurant",
+      "Parking",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL091",
+    "name": "Grand Jakarta Hotel 91",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 923050,
+    "rating": 4.9,
+    "stars": 3,
+    "amenities": [
+      "Restaurant",
+      "Pool",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL092",
+    "name": "Comfort Jakarta Hotel 92",
+    "city": "Jakarta",
+    "area": "Cikini",
+    "price_per_night": 1750733,
+    "rating": 4.9,
+    "stars": 3,
+    "amenities": [
+      "WiFi",
+      "Restaurant",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL093",
+    "name": "Royal Jakarta Hotel 93",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 1922008,
+    "rating": 4.6,
+    "stars": 3,
+    "amenities": [
+      "Restaurant",
+      "Parking",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL094",
+    "name": "Urban Jakarta Hotel 94",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 1131347,
+    "rating": 3.6,
+    "stars": 4,
+    "amenities": [
+      "Spa",
+      "Pool",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL095",
+    "name": "Comfort Jakarta Hotel 95",
+    "city": "Jakarta",
+    "area": "Blok M",
+    "price_per_night": 467749,
+    "rating": 3.7,
+    "stars": 4,
+    "amenities": [
+      "Pool",
+      "Bar",
+      "WiFi",
+      "Parking",
+      "Spa",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL096",
+    "name": "Luxury Jakarta Hotel 96",
+    "city": "Jakarta",
+    "area": "Senayan",
+    "price_per_night": 1607736,
+    "rating": 4.4,
+    "stars": 3,
+    "amenities": [
+      "Airport Shuttle",
+      "Pool",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL097",
+    "name": "Comfort Jakarta Hotel 97",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 878112,
+    "rating": 4.9,
+    "stars": 5,
+    "amenities": [
+      "Bar",
+      "Pool",
+      "Restaurant"
+    ]
+  },
+  {
+    "hotel_id": "HTL098",
+    "name": "Comfort Jakarta Hotel 98",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 1581735,
+    "rating": 3.9,
+    "stars": 4,
+    "amenities": [
+      "Parking",
+      "Spa",
+      "Gym",
+      "Bar",
+      "Airport Shuttle",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL099",
+    "name": "Skyline Jakarta Hotel 99",
+    "city": "Jakarta",
+    "area": "Menteng",
+    "price_per_night": 1414457,
+    "rating": 4.4,
+    "stars": 5,
+    "amenities": [
+      "WiFi",
+      "Airport Shuttle",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL100",
+    "name": "Skyline Jakarta Hotel 100",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 503418,
+    "rating": 4.5,
+    "stars": 4,
+    "amenities": [
+      "Spa",
+      "Restaurant",
+      "Airport Shuttle",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL101",
+    "name": "Golden Jakarta Hotel 101",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 800136,
+    "rating": 4.5,
+    "stars": 4,
+    "amenities": [
+      "Gym",
+      "Restaurant",
+      "Bar",
+      "Pool",
+      "Airport Shuttle",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL102",
+    "name": "Premier Jakarta Hotel 102",
+    "city": "Jakarta",
+    "area": "Menteng",
+    "price_per_night": 1734861,
+    "rating": 4.9,
+    "stars": 3,
+    "amenities": [
+      "Pool",
+      "Bar",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL103",
+    "name": "Heritage Jakarta Hotel 103",
+    "city": "Jakarta",
+    "area": "Thamrin",
+    "price_per_night": 1251042,
+    "rating": 4.2,
+    "stars": 4,
+    "amenities": [
+      "Airport Shuttle",
+      "Restaurant",
+      "Gym",
+      "Spa",
+      "Parking",
+      "Bar"
+    ]
+  },
+  {
+    "hotel_id": "HTL104",
+    "name": "Comfort Jakarta Hotel 104",
+    "city": "Jakarta",
+    "area": "Blok M",
+    "price_per_night": 1151165,
+    "rating": 4.1,
+    "stars": 5,
+    "amenities": [
+      "Parking",
+      "Airport Shuttle",
+      "Pool",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL105",
+    "name": "Premier Jakarta Hotel 105",
+    "city": "Jakarta",
+    "area": "Kuningan",
+    "price_per_night": 1273177,
+    "rating": 4.6,
+    "stars": 5,
+    "amenities": [
+      "Pool",
+      "Gym",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL106",
+    "name": "Comfort Jakarta Hotel 106",
+    "city": "Jakarta",
+    "area": "Sudirman",
+    "price_per_night": 1936279,
+    "rating": 4.7,
+    "stars": 5,
+    "amenities": [
+      "Bar",
+      "Spa",
+      "Airport Shuttle",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL107",
+    "name": "Urban Jakarta Hotel 107",
+    "city": "Jakarta",
+    "area": "Senayan",
+    "price_per_night": 1345518,
+    "rating": 4.5,
+    "stars": 3,
+    "amenities": [
+      "WiFi",
+      "Gym",
+      "Spa",
+      "Airport Shuttle",
+      "Restaurant",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL108",
+    "name": "Golden Jakarta Hotel 108",
+    "city": "Jakarta",
+    "area": "Blok M",
+    "price_per_night": 797136,
+    "rating": 4.6,
+    "stars": 4,
+    "amenities": [
+      "Gym",
+      "Restaurant",
+      "Bar",
+      "WiFi",
+      "Spa",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL109",
+    "name": "Heritage Jakarta Hotel 109",
+    "city": "Jakarta",
+    "area": "Kuningan",
+    "price_per_night": 745232,
+    "rating": 4.2,
+    "stars": 4,
+    "amenities": [
+      "Pool",
+      "Restaurant",
+      "Airport Shuttle",
+      "Bar"
+    ]
+  },
+  {
+    "hotel_id": "HTL110",
+    "name": "Grand Jakarta Hotel 110",
+    "city": "Jakarta",
+    "area": "Senayan",
+    "price_per_night": 1385818,
+    "rating": 3.7,
+    "stars": 4,
+    "amenities": [
+      "WiFi",
+      "Gym",
+      "Bar",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL111",
+    "name": "Elite Jakarta Hotel 111",
+    "city": "Jakarta",
+    "area": "Thamrin",
+    "price_per_night": 1156589,
+    "rating": 4.5,
+    "stars": 3,
+    "amenities": [
+      "Spa",
+      "Parking",
+      "Restaurant",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL112",
+    "name": "Premier Jakarta Hotel 112",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 1460914,
+    "rating": 4.5,
+    "stars": 4,
+    "amenities": [
+      "Bar",
+      "Restaurant",
+      "Parking",
+      "Gym",
+      "Airport Shuttle",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL113",
+    "name": "Golden Jakarta Hotel 113",
+    "city": "Jakarta",
+    "area": "Menteng",
+    "price_per_night": 1314079,
+    "rating": 4.7,
+    "stars": 5,
+    "amenities": [
+      "Spa",
+      "Pool",
+      "Bar"
+    ]
+  },
+  {
+    "hotel_id": "HTL114",
+    "name": "Comfort Jakarta Hotel 114",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 1603133,
+    "rating": 4.4,
+    "stars": 5,
+    "amenities": [
+      "WiFi",
+      "Pool",
+      "Bar"
+    ]
+  },
+  {
+    "hotel_id": "HTL115",
+    "name": "Golden Jakarta Hotel 115",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 735016,
+    "rating": 3.5,
+    "stars": 3,
+    "amenities": [
+      "WiFi",
+      "Gym",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL116",
+    "name": "Royal Jakarta Hotel 116",
+    "city": "Jakarta",
+    "area": "Kemang",
+    "price_per_night": 1181588,
+    "rating": 3.6,
+    "stars": 4,
+    "amenities": [
+      "Pool",
+      "Gym",
+      "Parking",
+      "WiFi",
+      "Spa",
+      "Restaurant"
+    ]
+  },
+  {
+    "hotel_id": "HTL117",
+    "name": "Skyline Jakarta Hotel 117",
+    "city": "Jakarta",
+    "area": "Blok M",
+    "price_per_night": 355960,
+    "rating": 4.8,
+    "stars": 4,
+    "amenities": [
+      "Spa",
+      "Parking",
+      "WiFi",
+      "Airport Shuttle",
+      "Bar",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL118",
+    "name": "Elite Jakarta Hotel 118",
+    "city": "Jakarta",
+    "area": "Cikini",
+    "price_per_night": 740908,
+    "rating": 3.7,
+    "stars": 4,
+    "amenities": [
+      "Airport Shuttle",
+      "WiFi",
+      "Gym",
+      "Bar",
+      "Pool",
+      "Parking"
+    ]
+  },
+  {
+    "hotel_id": "HTL119",
+    "name": "Urban Jakarta Hotel 119",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 960566,
+    "rating": 4.3,
+    "stars": 3,
+    "amenities": [
+      "Airport Shuttle",
+      "Restaurant",
+      "Parking",
+      "WiFi",
+      "Pool",
+      "Bar"
+    ]
+  },
+  {
+    "hotel_id": "HTL120",
+    "name": "Grand Jakarta Hotel 120",
+    "city": "Jakarta",
+    "area": "Blok M",
+    "price_per_night": 700869,
+    "rating": 4.9,
+    "stars": 5,
+    "amenities": [
+      "Bar",
+      "Parking",
+      "Restaurant",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL121",
+    "name": "Royal Jakarta Hotel 121",
+    "city": "Jakarta",
+    "area": "Cikini",
+    "price_per_night": 1575275,
+    "rating": 5.0,
+    "stars": 4,
+    "amenities": [
+      "Spa",
+      "Gym",
+      "Parking",
+      "Bar",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL122",
+    "name": "Urban Jakarta Hotel 122",
+    "city": "Jakarta",
+    "area": "Kuningan",
+    "price_per_night": 1441682,
+    "rating": 4.6,
+    "stars": 5,
+    "amenities": [
+      "Spa",
+      "Gym",
+      "Restaurant",
+      "Pool",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL123",
+    "name": "Elite Jakarta Hotel 123",
+    "city": "Jakarta",
+    "area": "Sudirman",
+    "price_per_night": 379361,
+    "rating": 4.7,
+    "stars": 4,
+    "amenities": [
+      "Parking",
+      "WiFi",
+      "Restaurant",
+      "Airport Shuttle",
+      "Pool",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL124",
+    "name": "Golden Jakarta Hotel 124",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 1024524,
+    "rating": 4.8,
+    "stars": 3,
+    "amenities": [
+      "Airport Shuttle",
+      "Bar",
+      "Gym",
+      "Parking",
+      "Restaurant",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL125",
+    "name": "Luxury Jakarta Hotel 125",
+    "city": "Jakarta",
+    "area": "Cikini",
+    "price_per_night": 1096032,
+    "rating": 3.6,
+    "stars": 3,
+    "amenities": [
+      "Spa",
+      "Gym",
+      "Parking",
+      "WiFi",
+      "Bar"
+    ]
+  },
+  {
+    "hotel_id": "HTL126",
+    "name": "Skyline Jakarta Hotel 126",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 1779003,
+    "rating": 4.0,
+    "stars": 5,
+    "amenities": [
+      "Airport Shuttle",
+      "Restaurant",
+      "WiFi",
+      "Spa",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL127",
+    "name": "Golden Jakarta Hotel 127",
+    "city": "Jakarta",
+    "area": "Kemang",
+    "price_per_night": 1377857,
+    "rating": 3.8,
+    "stars": 5,
+    "amenities": [
+      "Bar",
+      "Parking",
+      "WiFi",
+      "Restaurant",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL128",
+    "name": "Royal Jakarta Hotel 128",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 1748823,
+    "rating": 3.9,
+    "stars": 3,
+    "amenities": [
+      "Pool",
+      "Gym",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL129",
+    "name": "Grand Jakarta Hotel 129",
+    "city": "Jakarta",
+    "area": "Menteng",
+    "price_per_night": 597053,
+    "rating": 4.1,
+    "stars": 5,
+    "amenities": [
+      "Restaurant",
+      "Parking",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL130",
+    "name": "Premier Jakarta Hotel 130",
+    "city": "Jakarta",
+    "area": "Cikini",
+    "price_per_night": 1647613,
+    "rating": 4.8,
+    "stars": 5,
+    "amenities": [
+      "Restaurant",
+      "Spa",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL131",
+    "name": "Elite Jakarta Hotel 131",
+    "city": "Jakarta",
+    "area": "Blok M",
+    "price_per_night": 408668,
+    "rating": 3.9,
+    "stars": 3,
+    "amenities": [
+      "Gym",
+      "WiFi",
+      "Airport Shuttle",
+      "Parking",
+      "Spa",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL132",
+    "name": "Grand Jakarta Hotel 132",
+    "city": "Jakarta",
+    "area": "Kelapa Gading",
+    "price_per_night": 1873332,
+    "rating": 4.2,
+    "stars": 5,
+    "amenities": [
+      "WiFi",
+      "Bar",
+      "Airport Shuttle",
+      "Spa",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL133",
+    "name": "Heritage Jakarta Hotel 133",
+    "city": "Jakarta",
+    "area": "Thamrin",
+    "price_per_night": 1492983,
+    "rating": 4.9,
+    "stars": 5,
+    "amenities": [
+      "Parking",
+      "Restaurant",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL134",
+    "name": "Premier Jakarta Hotel 134",
+    "city": "Jakarta",
+    "area": "Senayan",
+    "price_per_night": 1134618,
+    "rating": 4.1,
+    "stars": 5,
+    "amenities": [
+      "Restaurant",
+      "WiFi",
+      "Parking",
+      "Bar",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL135",
+    "name": "Skyline Jakarta Hotel 135",
+    "city": "Jakarta",
+    "area": "Senayan",
+    "price_per_night": 1556711,
+    "rating": 4.4,
+    "stars": 4,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Restaurant",
+      "Bar",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL136",
+    "name": "Luxury Jakarta Hotel 136",
+    "city": "Jakarta",
+    "area": "Sudirman",
+    "price_per_night": 1071315,
+    "rating": 3.9,
+    "stars": 4,
+    "amenities": [
+      "Pool",
+      "WiFi",
+      "Restaurant",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL137",
+    "name": "Grand Jakarta Hotel 137",
+    "city": "Jakarta",
+    "area": "Senayan",
+    "price_per_night": 1907991,
+    "rating": 3.9,
+    "stars": 3,
+    "amenities": [
+      "Spa",
+      "Pool",
+      "Gym",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL138",
+    "name": "Luxury Jakarta Hotel 138",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 681069,
+    "rating": 4.1,
+    "stars": 3,
+    "amenities": [
+      "WiFi",
+      "Spa",
+      "Restaurant"
+    ]
+  },
+  {
+    "hotel_id": "HTL139",
+    "name": "Golden Jakarta Hotel 139",
+    "city": "Jakarta",
+    "area": "Kemang",
+    "price_per_night": 1640425,
+    "rating": 3.8,
+    "stars": 4,
+    "amenities": [
+      "Airport Shuttle",
+      "Bar",
+      "Gym"
+    ]
+  },
+  {
+    "hotel_id": "HTL140",
+    "name": "Grand Jakarta Hotel 140",
+    "city": "Jakarta",
+    "area": "Kuningan",
+    "price_per_night": 1161769,
+    "rating": 4.8,
+    "stars": 5,
+    "amenities": [
+      "Parking",
+      "Gym",
+      "Pool",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL141",
+    "name": "Elite Jakarta Hotel 141",
+    "city": "Jakarta",
+    "area": "Cikini",
+    "price_per_night": 1337103,
+    "rating": 4.0,
+    "stars": 5,
+    "amenities": [
+      "Parking",
+      "Bar",
+      "WiFi",
+      "Gym",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL142",
+    "name": "Comfort Jakarta Hotel 142",
+    "city": "Jakarta",
+    "area": "Sudirman",
+    "price_per_night": 1524837,
+    "rating": 3.7,
+    "stars": 3,
+    "amenities": [
+      "Restaurant",
+      "Bar",
+      "Airport Shuttle",
+      "Parking",
+      "Pool",
+      "Spa"
+    ]
+  },
+  {
+    "hotel_id": "HTL143",
+    "name": "Grand Jakarta Hotel 143",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 785480,
+    "rating": 5.0,
+    "stars": 3,
+    "amenities": [
+      "Bar",
+      "Gym",
+      "Airport Shuttle"
+    ]
+  },
+  {
+    "hotel_id": "HTL144",
+    "name": "Luxury Jakarta Hotel 144",
+    "city": "Jakarta",
+    "area": "Blok M",
+    "price_per_night": 1307275,
+    "rating": 4.8,
+    "stars": 5,
+    "amenities": [
+      "Spa",
+      "Restaurant",
+      "Pool",
+      "Airport Shuttle",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL145",
+    "name": "Comfort Jakarta Hotel 145",
+    "city": "Jakarta",
+    "area": "Kuningan",
+    "price_per_night": 395470,
+    "rating": 3.5,
+    "stars": 4,
+    "amenities": [
+      "WiFi",
+      "Airport Shuttle",
+      "Bar",
+      "Gym",
+      "Spa",
+      "Restaurant"
+    ]
+  },
+  {
+    "hotel_id": "HTL146",
+    "name": "Urban Jakarta Hotel 146",
+    "city": "Jakarta",
+    "area": "Pluit",
+    "price_per_night": 508897,
+    "rating": 4.8,
+    "stars": 5,
+    "amenities": [
+      "Pool",
+      "Airport Shuttle",
+      "Parking",
+      "Spa",
+      "WiFi"
+    ]
+  },
+  {
+    "hotel_id": "HTL147",
+    "name": "Golden Jakarta Hotel 147",
+    "city": "Jakarta",
+    "area": "Blok M",
+    "price_per_night": 329667,
+    "rating": 3.9,
+    "stars": 4,
+    "amenities": [
+      "Pool",
+      "Restaurant",
+      "Spa",
+      "Gym",
+      "Bar"
+    ]
+  },
+  {
+    "hotel_id": "HTL148",
+    "name": "Comfort Jakarta Hotel 148",
+    "city": "Jakarta",
+    "area": "Kuningan",
+    "price_per_night": 490002,
+    "rating": 4.0,
+    "stars": 5,
+    "amenities": [
+      "Airport Shuttle",
+      "Bar",
+      "Parking",
+      "Spa",
+      "WiFi",
+      "Pool"
+    ]
+  },
+  {
+    "hotel_id": "HTL149",
+    "name": "Heritage Jakarta Hotel 149",
+    "city": "Jakarta",
+    "area": "Senayan",
+    "price_per_night": 794901,
+    "rating": 4.4,
+    "stars": 4,
+    "amenities": [
+      "Restaurant",
+      "Airport Shuttle",
+      "Spa",
+      "Pool",
+      "WiFi",
+      "Bar"
+    ]
+  },
+  {
+    "hotel_id": "HTL150",
+    "name": "Golden Jakarta Hotel 150",
+    "city": "Jakarta",
+    "area": "Blok M",
+    "price_per_night": 578024,
+    "rating": 3.5,
+    "stars": 3,
+    "amenities": [
+      "Restaurant",
+      "Parking",
+      "Airport Shuttle",
+      "Gym",
+      "Spa"
+    ]
+  }
+]

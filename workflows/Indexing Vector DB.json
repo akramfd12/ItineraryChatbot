@@ -1,0 +1,293 @@
+{
+  "name": "Indexing Vector DB",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -32,
+        16
+      ],
+      "id": "4870f5e6-b236-4c59-85aa-23c8884959f7",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "returnAll": true,
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "https://drive.google.com/drive/u/0/folders/1fJqe0E6pXtx9o9rN9Ea1eWIqqYgBtyrX",
+            "mode": "url"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        192,
+        16
+      ],
+      "id": "db060046-1b67-48b3-bc9a-67f2bdb116d8",
+      "name": "Search files and folders",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "NXXmUYGIQJpB75vo",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        416,
+        16
+      ],
+      "id": "ba2767be-c395-4619-9fba-f7162b334112",
+      "name": "Download file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "NXXmUYGIQJpB75vo",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "include": "allOtherFields",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        864,
+        16
+      ],
+      "id": "08642150-f88b-454e-a8a4-c4e81ae06b4e",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1040,
+        192
+      ],
+      "id": "c2de10b7-a358-4691-a6ba-ee485d999a94",
+      "name": "Text embedding 3 small",
+      "credentials": {
+        "openAiApi": {
+          "id": "28DBzgcYPZ9x8af2",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $json.data.text }}",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "place",
+                "value": "={{ $json.data.metadata.place }}"
+              },
+              {
+                "name": "vibe",
+                "value": "={{ $json.data.metadata.vibe }}"
+              },
+              {
+                "name": "best_time",
+                "value": "={{ $json.data.metadata.best_time }}"
+              },
+              {
+                "name": "crowd",
+                "value": "={{ $json.data.metadata.crowd }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        1232,
+        208
+      ],
+      "id": "0bd86988-17ef-4cfb-aab7-43b63226194c",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        640,
+        16
+      ],
+      "id": "2bf48762-5ade-46c4-bd55-08b731261618",
+      "name": "Extract Spot Photo JSON"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "spot_photo_n8n_project",
+          "mode": "list",
+          "cachedResultName": "spot_photo_n8n_project"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.3,
+      "position": [
+        1088,
+        16
+      ],
+      "id": "3c39bf74-04b0-4532-86b3-2efd5c4505ff",
+      "name": "Spot Photo Store",
+      "credentials": {
+        "qdrantApi": {
+          "id": "X3cwirslT1Z7nMQW",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Indexing Vector DB\n",
+        "height": 544,
+        "width": 1504,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -96,
+        -144
+      ],
+      "typeVersion": 1,
+      "id": "5c508d3f-3a59-4f26-8b1e-aae940066805",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Search files and folders",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search files and folders": {
+      "main": [
+        [
+          {
+            "node": "Download file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file": {
+      "main": [
+        [
+          {
+            "node": "Extract Spot Photo JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Spot Photo Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text embedding 3 small": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Spot Photo Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Spot Photo Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Spot Photo JSON": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spot Photo Store": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "8b2428e1-02b8-4a47-a01f-fce0af03ef3a",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ae534c8b378b8cdba2f6b424bf398289ead40d3d868ce0e87409d7bb0f017004"
+  },
+  "id": "0QLlvbARevlNjczH",
+  "tags": []
+}

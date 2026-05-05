@@ -1,0 +1,542 @@
+{
+  "name": "ETL",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        544,
+        48
+      ],
+      "id": "e8fa0747-953a-4a96-a139-3d0fae67df05",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "returnAll": true,
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "https://drive.google.com/drive/u/0/folders/1ExUdCwZdmIMkn11ASDC6DRSYGP2hRAhM",
+            "mode": "url"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1216,
+        48
+      ],
+      "id": "f019768a-9943-4604-9a7a-32e344a65d9f",
+      "name": "Search files and folders",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "NXXmUYGIQJpB75vo",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1440,
+        48
+      ],
+      "id": "0723dc8a-4ebc-40ca-824c-a42c6736944e",
+      "name": "Download file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "NXXmUYGIQJpB75vo",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "9acd000a-1100-4a9d-b7f9-25d5a9d904c3",
+              "leftValue": "={{ $json.name }}",
+              "rightValue": "hotel",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1664,
+        48
+      ],
+      "id": "109a645c-191b-4f01-852d-bba408b065e0",
+      "name": "If(For split data)"
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        1888,
+        144
+      ],
+      "id": "49e5818b-f232-4b40-a403-7e6a99de3d3a",
+      "name": "Extract Flight JSON"
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        1888,
+        -112
+      ],
+      "id": "3a98676c-d903-40a7-8194-8560bbced584",
+      "name": "Extract Hotel JSON"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "include": "allOtherFields",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        2112,
+        144
+      ],
+      "id": "344a29a2-f3bc-41b5-8ea0-56f9e04c7f90",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CREATE TABLE IF NOT EXISTS flights (\n    ticket_id VARCHAR(20) PRIMARY KEY,\n    airline VARCHAR(100),\n    origin VARCHAR(100),\n    destination VARCHAR(100),\n    departure_time DATETIME,\n    arrival_time DATETIME,\n    price INT,\n    class_type VARCHAR(50),\n    departure_date DATE\n);",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        768,
+        48
+      ],
+      "id": "ec7b6b0b-388a-40ef-9546-d02f424dfea6",
+      "name": "Create table flight",
+      "credentials": {
+        "mySql": {
+          "id": "7yUddLaNFc08znpV",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CREATE TABLE IF NOT EXISTS hotels (\n    hotel_id VARCHAR(20) PRIMARY KEY,\n    name VARCHAR(255),\n    city VARCHAR(100),\n    area VARCHAR(100),\n    price_per_night INT,\n    rating DECIMAL(2,1),\n    stars INT,\n    amenities JSON\n);",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        992,
+        48
+      ],
+      "id": "1db5542a-de57-4c59-a5ee-b445017b09b1",
+      "name": "Create table hotels",
+      "credentials": {
+        "mySql": {
+          "id": "7yUddLaNFc08znpV",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "include": "allOtherFields",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        2112,
+        -112
+      ],
+      "id": "8cb94329-cdd9-4767-8fc8-39690504c618",
+      "name": "Split Out1"
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "hotels",
+          "mode": "list",
+          "cachedResultName": "hotels"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "hotel_id",
+              "value": "={{ $json.data.hotel_id }}"
+            },
+            {
+              "column": "name",
+              "value": "={{ $json.data.name }}"
+            },
+            {
+              "column": "city",
+              "value": "={{ $json.data.city }}"
+            },
+            {
+              "column": "area",
+              "value": "={{ $json.data.area }}"
+            },
+            {
+              "column": "price_per_night",
+              "value": "={{ $json.data.price_per_night }}"
+            },
+            {
+              "column": "rating",
+              "value": "={{ $json.data.rating }}"
+            },
+            {
+              "column": "stars",
+              "value": "={{ $json.data.stars }}"
+            },
+            {
+              "column": "amenities",
+              "value": "={{ JSON.stringify($json.data.amenities) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        2336,
+        -112
+      ],
+      "id": "9b5b27f0-4ff3-4aef-875f-664d20a658a0",
+      "name": "Insert Table Hotel",
+      "credentials": {
+        "mySql": {
+          "id": "7yUddLaNFc08znpV",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Create Table\n\n",
+        "height": 224,
+        "width": 400,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        736,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "fcbc2994-aae2-41e4-a55f-0b11ae4d41cf",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Download Data",
+        "height": 224,
+        "width": 400
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1184,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "ca75fdb9-e91a-4d8e-a560-2c04eb9c785c",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## ETL Hotel Data",
+        "height": 224,
+        "width": 624,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1856,
+        -192
+      ],
+      "typeVersion": 1,
+      "id": "cc541016-1783-4760-b1db-237cf6c2b6ef",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## ETL Flight Data",
+        "height": 224,
+        "width": 624,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1856,
+        64
+      ],
+      "typeVersion": 1,
+      "id": "6b6adaef-d7d4-4e65-94ef-e4ead2742fca",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "flights",
+          "mode": "list",
+          "cachedResultName": "flights"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "ticket_id",
+              "value": "={{ $json.data.ticket_id }}"
+            },
+            {
+              "column": "airline",
+              "value": "={{ $json.data.airline }}"
+            },
+            {
+              "column": "origin",
+              "value": "={{ $json.data.origin }}"
+            },
+            {
+              "column": "destination",
+              "value": "={{ $json.data.destination }}"
+            },
+            {
+              "column": "departure_time",
+              "value": "={{ $json.data.departure_time }}"
+            },
+            {
+              "column": "arrival_time",
+              "value": "={{ $json.data.arrival_time }}"
+            },
+            {
+              "column": "price",
+              "value": "={{ $json.data.price }}"
+            },
+            {
+              "column": "class_type",
+              "value": "={{ $json.data.class }}"
+            },
+            {
+              "column": "departure_date",
+              "value": "={{ $json.data.departure_date }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        2336,
+        144
+      ],
+      "id": "3328e0df-c01f-43ca-a85d-1ffd33902ea0",
+      "name": "Insert Table Flight",
+      "credentials": {
+        "mySql": {
+          "id": "7yUddLaNFc08znpV",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## ETL DATA",
+        "height": 784,
+        "width": 2016,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        496,
+        -320
+      ],
+      "typeVersion": 1,
+      "id": "e1e03e65-26dc-4a4b-8223-2dfa760a1a8c",
+      "name": "Sticky Note4"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Create table flight",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search files and folders": {
+      "main": [
+        [
+          {
+            "node": "Download file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file": {
+      "main": [
+        [
+          {
+            "node": "If(For split data)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If(For split data)": {
+      "main": [
+        [
+          {
+            "node": "Extract Hotel JSON",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Extract Flight JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Hotel JSON": {
+      "main": [
+        [
+          {
+            "node": "Split Out1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Flight JSON": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Insert Table Flight",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create table flight": {
+      "main": [
+        [
+          {
+            "node": "Create table hotels",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create table hotels": {
+      "main": [
+        [
+          {
+            "node": "Search files and folders",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out1": {
+      "main": [
+        [
+          {
+            "node": "Insert Table Hotel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "d5fa259e-7ae5-4580-86dd-047f8fe886eb",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ae534c8b378b8cdba2f6b424bf398289ead40d3d868ce0e87409d7bb0f017004"
+  },
+  "id": "OONnyy8szsLltmF8",
+  "tags": []
+}

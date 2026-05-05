@@ -1,0 +1,82 @@
+[
+  {
+    "text": "Monas adalah landmark ikonik Jakarta dengan latar kota. Waktu terbaik foto adalah pagi atau sunset untuk cahaya yang lembut.",
+    "metadata": {"place":"Monas","vibe":["iconic","city"],"best_time":["morning","sunset"],"crowd":"high"}
+  },
+  {
+    "text": "Kota Tua menawarkan suasana vintage dengan bangunan kolonial, cocok untuk foto estetik terutama pagi atau sore.",
+    "metadata": {"place":"Kota Tua","vibe":["vintage","heritage"],"best_time":["morning","afternoon"],"crowd":"high"}
+  },
+  {
+    "text": "GBK memiliki area luas dengan skyline modern Jakarta, menarik untuk foto malam hari.",
+    "metadata": {"place":"GBK","vibe":["modern","city"],"best_time":["night"],"crowd":"medium"}
+  },
+  {
+    "text": "PIK terkenal dengan cafe aesthetic dan spot outdoor modern yang cocok untuk foto Instagram.",
+    "metadata": {"place":"PIK","vibe":["aesthetic","cafe"],"best_time":["afternoon","evening"],"crowd":"medium"}
+  },
+  {
+    "text": "Hutan Kota GBK memberikan kombinasi alam dan gedung tinggi, cocok untuk foto santai.",
+    "metadata": {"place":"Hutan Kota GBK","vibe":["nature","city"],"best_time":["morning","afternoon"],"crowd":"medium"}
+  },
+  {
+    "text": "Jembatan Kota Intan di Kota Tua menawarkan spot foto klasik dengan nuansa sejarah.",
+    "metadata": {"place":"Jembatan Kota Intan","vibe":["vintage"],"best_time":["morning"],"crowd":"low"}
+  },
+  {
+    "text": "Ancol memiliki pantai dengan view laut dan sunset yang menarik untuk foto santai.",
+    "metadata": {"place":"Ancol","vibe":["beach","relax"],"best_time":["sunset"],"crowd":"medium"}
+  },
+  {
+    "text": "Skyline SCBD sangat menarik untuk foto malam dengan gedung tinggi dan lampu kota.",
+    "metadata": {"place":"SCBD","vibe":["city","night"],"best_time":["night"],"crowd":"medium"}
+  },
+  {
+    "text": "Taman Suropati cocok untuk foto santai dengan suasana hijau di tengah kota.",
+    "metadata": {"place":"Taman Suropati","vibe":["nature"],"best_time":["morning"],"crowd":"low"}
+  },
+  {
+    "text": "Museum MACAN menawarkan spot foto modern dan artistik dengan instalasi seni.",
+    "metadata": {"place":"Museum MACAN","vibe":["art","indoor"],"best_time":["afternoon"],"crowd":"medium"}
+  },
+  {
+    "text": "Plaza Senayan Sky Bridge memiliki spot modern dengan view kota yang menarik.",
+    "metadata": {"place":"Plaza Senayan Sky Bridge","vibe":["modern"],"best_time":["evening"],"crowd":"medium"}
+  },
+  {
+    "text": "Pantjoran PIK memiliki nuansa Chinatown dengan lampion dan desain unik.",
+    "metadata": {"place":"Pantjoran PIK","vibe":["cultural","aesthetic"],"best_time":["evening"],"crowd":"high"}
+  },
+  {
+    "text": "Setu Babakan menawarkan suasana budaya Betawi dengan spot foto tradisional.",
+    "metadata": {"place":"Setu Babakan","vibe":["cultural","traditional"],"best_time":["morning"],"crowd":"low"}
+  },
+  {
+    "text": "Lapangan Banteng memiliki taman luas dengan air mancur dan lighting malam yang menarik.",
+    "metadata": {"place":"Lapangan Banteng","vibe":["city","park"],"best_time":["evening","night"],"crowd":"medium"}
+  },
+  {
+    "text": "M Bloc Space adalah tempat kreatif dengan desain industrial yang cocok untuk foto aesthetic.",
+    "metadata": {"place":"M Bloc Space","vibe":["creative","aesthetic"],"best_time":["afternoon","evening"],"crowd":"medium"}
+  },
+  {
+    "text": "Tebet Eco Park memiliki jembatan ikonik dan area hijau modern untuk foto santai.",
+    "metadata": {"place":"Tebet Eco Park","vibe":["nature","modern"],"best_time":["morning"],"crowd":"high"}
+  },
+  {
+    "text": "Central Park Tribeca Park menawarkan area outdoor dengan suasana santai dan lampu malam.",
+    "metadata": {"place":"Tribeca Park","vibe":["lifestyle","outdoor"],"best_time":["evening"],"crowd":"medium"}
+  },
+  {
+    "text": "Grand Indonesia Sky Bridge memberikan view kota modern untuk foto urban.",
+    "metadata": {"place":"GI Sky Bridge","vibe":["urban"],"best_time":["evening"],"crowd":"medium"}
+  },
+  {
+    "text": "Cafe rooftop di Jakarta seperti di Senopati menawarkan view skyline untuk foto malam.",
+    "metadata": {"place":"Rooftop Cafe Jakarta","vibe":["night","luxury"],"best_time":["night"],"crowd":"medium"}
+  },
+  {
+    "text": "Pelabuhan Sunda Kelapa memiliki kapal tradisional yang cocok untuk foto dengan nuansa klasik.",
+    "metadata": {"place":"Sunda Kelapa","vibe":["heritage","port"],"best_time":["morning"],"crowd":"low"}
+  }
+]

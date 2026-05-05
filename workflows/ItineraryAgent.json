@@ -1,0 +1,732 @@
+{
+  "name": "ItineraryAgent",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "a44870b6-992f-45c4-80c1-fde4c220a05f",
+              "leftValue": "={{ $json.message.text }}",
+              "rightValue": "/start",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -288,
+        1136
+      ],
+      "id": "4fe78546-b6c3-4cca-8544-fd531740dd14",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -512,
+        1136
+      ],
+      "id": "2624a632-23fb-482f-b242-bad1a2ce780f",
+      "name": "Input Message",
+      "webhookId": "12718428-4289-44d6-81fb-29153b5ebe24",
+      "credentials": {
+        "telegramApi": {
+          "id": "WYNPHX6k8IJq0p0L",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "pythonNative",
+        "pythonCode": "return [\n    {\n        \"question\": item[\"json\"][\"message\"][\"text\"],\n        \"chat_id\": item[\"json\"][\"message\"][\"chat\"][\"id\"]\n    }\n    for item in _items\n]\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -64,
+        1232
+      ],
+      "id": "b8cd89f2-2fa6-406a-bd71-02208ce375c1",
+      "name": "Parse Message"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.question }}",
+        "options": {
+          "systemMessage": "You are a travel assistant for Jakarta.\n\nYour role:\n1. Understand the user request\n2. Decide which tool to use\n3. Retrieve results from tools\n4. Return the tool output directly\n\n---\n\nAVAILABLE TOOLS:\n\n- Travel Agent Tool → flights and hotels\n- Spot Photo Agent Tool → photo spots / instagrammable places\n- Itinerary Agent Tool → travel itinerary based on weather\n\n---\n\nRULES:\n\n1. TOOL USAGE (MANDATORY)\n\n- Flights → use Travel Agent Tool\n- Hotels → use Travel Agent Tool\n- Photo spots → use Spot Photo Agent Tool\n- Itinerary → use Itinerary Agent Tool\n\n- ALWAYS use tools when applicable\n- Do NOT answer from your own knowledge if a tool is available\n\n---\n\n2. MULTI-INTENT\n\n- If the user asks multiple things (e.g. flight + hotel + itinerary):\n  → Call multiple tools\n  → Combine all tool outputs into one response\n\n---\n\n3. NO HALLUCINATION\n\n- Do NOT create or assume any data\n- Only use results from tools\n\n---\n\n4. RESPONSE HANDLING\n\n- Return tool outputs as-is\n- Do NOT reformat\n- Do NOT summarize\n- Do NOT add explanations\n- Do NOT modify content\n\n---\n\n5. GENERAL\n\n- If the request is not related to travel:\n  → Respond briefly that you only handle travel-related queries"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        496,
+        1232
+      ],
+      "id": "dc9f04d6-1b84-4e6f-be89-24fc33ffa7c8",
+      "name": "Main Agent"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $item(0).$node[\"Parse Message\"].json.chat_id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1168,
+        1232
+      ],
+      "id": "019cd180-734e-49ef-8546-a48e0ee1ad98",
+      "name": "Output Message",
+      "webhookId": "66d10950-c879-4811-8000-704ee71dd5a4",
+      "credentials": {
+        "telegramApi": {
+          "id": "WYNPHX6k8IJq0p0L",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -368,
+        1552
+      ],
+      "id": "02b41b16-6ff1-43db-9515-646ba7d21d3d",
+      "name": "GPT 5 Mini1",
+      "credentials": {
+        "openAiApi": {
+          "id": "28DBzgcYPZ9x8af2",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.chat_id }}",
+        "contextWindowLength": 7
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -208,
+        1552
+      ],
+      "id": "e0a53c20-e597-4039-8a18-41c0f41f2f56",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Retrieve travel data (flights and hotels) based on the user query.\n\nUse this tool when the user asks about flights or hotels.\n\nInput: user query  \nOutput: travel data including flight or hotel information",
+        "text": "={{ $json.question }}",
+        "options": {
+          "systemMessage": "You are a travel data agent.\n\nYour job is to retrieve real travel data using available tools.\n\nYou have access to:\n- Flight Search → for flight queries\n- Hotel Search → for hotel queries\n\n---\n\nRULES:\n\n1. TOOL USAGE (VERY IMPORTANT)\n- If the user asks about flights → ALWAYS use Flight Search\n- If the user asks about hotels → ALWAYS use Hotel Search\n- Do NOT answer from your own knowledge if data can be retrieved from tools\n\n2. PARAMETERS\n- Extract parameters from the user message:\n  - Flight:\n    - origin (departure city)\n    - destination (arrival city)\n    - date (if available)\n  - Hotel:\n    - city\n    - stars (if mentioned)\n    - area\n\n- If some parameters are missing:\n  - First check previous conversation (memory)\n  - If still missing, ask a concise follow-up question\n\n3. MEMORY USAGE\n- Use previous conversation context if available\n- Do NOT ask for information that has already been provided\n- Always infer missing parameters from memory before asking\n\n4. RESPONSE STYLE\n- Be concise and clear\n- Do NOT explain your reasoning\n- Do NOT mention tools\n- Return only relevant results\n\n5. LIMITATION\n- Only handle travel-related queries (flight, hotel)\n- If unrelated, respond briefly that you only handle travel queries\n\n6. RESPONSE CONTROL\n- No explanation, no intro text\n- Do NOT summarize\n- Do NOT limit results\n- Keep format minimal\n\n7. CONSISTENCY\n\n- Use consistent style\n- No commentary (e.g. \"recommended\", \"best\")\n- If no data: \"No results found\"\n\n8. OUTPUT FORMAT\nFLIGHT:\n\n## ✈️ Flight Recommendation\n\nFormat each flight:\n\n1. Maskapai : {airline}  \n   Jam Keberangkatan : {departure_time}  \n   Jam Kedatangan : {arrival_time}  \n   Kelas : {class}  \n   Harga : Rp {price}\n\n- If multiple flights → use numbering (1, 2, 3, ...)\n- Use only available data from output\n\n---\n\nHOTEL:\n\n## 🏨 Hotel Recommendation\n\nFormat each hotel:\n\n1. Hotel : {hotel_name}  \n   Area : {area}  \n   Bintang : {stars}⭐\n   Fasilitas : {amenities}\n   Harga : Rp {price}/malam  \n\n- If multiple hotels → use numbering\n\n---\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 3,
+      "position": [
+        176,
+        1504
+      ],
+      "id": "618e209a-b184-47a9-b269-dc0be221a5dd",
+      "name": "Travel Agent Tool"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "flights",
+          "mode": "list",
+          "cachedResultName": "flights"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "origin",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('values0_Value', ``, 'string') }}"
+            },
+            {
+              "column": "destination",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('values1_Value', ``, 'string') }}"
+            },
+            {
+              "column": "departure_date",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('values2_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "sort": {
+          "values": []
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySqlTool",
+      "typeVersion": 2.5,
+      "position": [
+        256,
+        1744
+      ],
+      "id": "84f4d28a-6a5f-4891-9b00-8d4aceb41ccd",
+      "name": "Flight Search1",
+      "credentials": {
+        "mySql": {
+          "id": "7yUddLaNFc08znpV",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "hotels",
+          "mode": "list",
+          "cachedResultName": "hotels"
+        },
+        "limit": 5,
+        "where": {
+          "values": [
+            {
+              "column": "city",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('values0_Value', ``, 'string') }}"
+            },
+            {
+              "column": "stars",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('values1_Value', ``, 'string') }}"
+            },
+            {
+              "column": "area",
+              "condition": "LIKE",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('values2_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySqlTool",
+      "typeVersion": 2.5,
+      "position": [
+        416,
+        1744
+      ],
+      "id": "5f514442-9920-4674-a22c-ca88e0f0e336",
+      "name": "Hotel Search1",
+      "credentials": {
+        "mySql": {
+          "id": "7yUddLaNFc08znpV",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Retrieve photo spots based on the user query.\n\nWHEN TO USE:\n- Use this tool when the user asks for photo spots, scenic places, or aesthetic locations\n- This includes places for taking pictures, sightseeing, or content creation\n\nINPUT:\n- Accepts the user query directly\n\nOUTPUT:\n- Returns relevant locations with information such as:\n  - place name\n  - area or location\n  - description or highlights\n\nNOTES:\n- Results are retrieved from a vector store of curated locations\n- Use the results to suggest suitable photo spots to the user",
+        "text": "={{ $json.question }}",
+        "options": {
+          "systemMessage": "You are a spot photo recommendation agent.\n\nYour job is to recommend photo spots based on retrieved data from a vector database.\n\nEach result contains:\n- text (description)\n- metadata:\n  - place\n  - vibe (list)\n  - best_time (list)\n  - crowd\n\n---\n\nRULES:\n\n1. DATA USAGE\n- ONLY use the provided retrieved results\n- Do NOT create or hallucinate new places\n- Do NOT modify place names\n\n2. SELECTION\n- Return ONLY 1–5 most relevant places\n- Prioritize relevance to user query (vibe, context, time)\n- Avoid repeating similar places\n- If exact match is not found, return closest relevant results\n\n3. UNDERSTANDING\n- Understand Indonesian and English context (e.g. pagi ≈ morning, malam ≈ night)\n\n---\n\n4. RESPONSE STYLE\n- Sound natural, like giving quick recommendations\n- Follow the tone from the \"text\" field\n- Do NOT sound like structured data or labels\n- Keep it short but flowing like a normal sentence\n\n---\n\n5. OUTPUT FORMAT\n- Use numbering if more than one result (1., 2., 3.)\n- Each item 1 short line (max 1–2 lines if needed)\n\nStructure:\n\nSPOT PHOTO:\n\n## 📸 Spot Photo Recommendation\n\n{place} — {natural short description}\n\n---\n\nRules:\n- Rewrite from \"text\" into a shorter, natural version\n- Do NOT copy full sentence\n- Do NOT sound robotic\n- Keep it concise (~8–15 words)\n- You may naturally include vibe or time if relevant (NOT mandatory)\n- Avoid repeating words or patterns\n\n---\n\n6. CONSISTENCY\n- Keep responses clean and easy to read\n- Do NOT add extra explanation or commentary\n- Do NOT output metadata explicitly\n\n---\n\n7. FALLBACK\n- If no strong match, return closest relevant results\n- Only return \"No spots found\" if truly no data\n\n---\n\nIMPORTANT:\n- Output must feel like a human recommendation, not a database result"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 3,
+      "position": [
+        704,
+        1520
+      ],
+      "id": "691aab96-c72e-40bf-9bc0-7aa35f4bbf2b",
+      "name": "Spot Photo Agent Tool"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolDescription": "Retrieve photo spot recommendations based on user query.\n\nThe system searches for relevant places using semantic similarity from the user message.\n\nImportant:\n- Understand Indonesian and English time words (e.g. pagi, siang, sore, malam).\n- Match them with available data such as morning, afternoon, evening, night.\n- Prioritize results that are relevant to time preference, vibe, and location.\n\nIf multiple results are found:\n- Return the most relevant ones (top 3–5)\n\nIf no exact match:\n- Return the closest relevant results instead of empty\n\nUse both text meaning and contextual similarity to retrieve results.",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "spot_photo_n8n_project",
+          "mode": "list",
+          "cachedResultName": "spot_photo_n8n_project"
+        },
+        "topK": 5,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.3,
+      "position": [
+        784,
+        1712
+      ],
+      "id": "8eecfed6-d961-4669-8d0d-c90eff44035f",
+      "name": "Spot Photo Vector Store",
+      "credentials": {
+        "qdrantApi": {
+          "id": "X3cwirslT1Z7nMQW",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Generate a travel itinerary in Jakarta based on user request and weather data.\n\nWHEN TO USE:\n- Use this tool when the user asks for a travel plan or itinerary\n\nINPUT:\n- Accepts the user query directly (may include duration and date)\n\nOUTPUT:\n- Returns a structured itinerary with activities divided by time (morning, afternoon, evening)\n\nNOTES:\n- Uses weather data to adjust activities (indoor or outdoor)\n- Results should be used to provide a realistic and weather-appropriate itinerary",
+        "text": "={{ $json.question }}",
+        "options": {
+          "systemMessage": "You are an itinerary planning agent for Jakarta.\n\nCreate a travel itinerary based on user request and weather data.\n\nYou have access to:\n- API Weather (MANDATORY)\n\n---\n\nRULES:\n\n1. DATE (IMPORTANT)\n- Weather depends on date\n- If user does NOT provide date → ask:\n  \"Mau berangkat tanggal berapa?\"\n- DO NOT generate itinerary without date\n\n2. TOOL USAGE\n- ALWAYS use API Weather\n- Do NOT guess\n\n3. SCOPE\n- Only Jakarta\n\n4. DURATION\n- Follow user request\n- Default: 1 day\n\n5. WEATHER USAGE\nMap weather_code:\n- 0 → clear → outdoor\n- 1–3 → cloudy → flexible\n- 45,48 → fog → light outdoor\n- 51–55 → drizzle → semi-outdoor\n- 61–65 → rain → indoor\n- 80–82 → heavy rain → indoor only\n- 95 → thunderstorm → indoor only\n\n- Activities MUST match weather\n\n6. WEATHER OUTPUT (INDONESIAN)\nConvert weather to Indonesian:\n- clear → cerah\n- cloudy → berawan\n- fog → berkabut\n- drizzle → gerimis\n- rain → hujan\n- heavy rain → hujan lebat\n- thunderstorm → badai petir\n\n- DO NOT use English in final output\n\n7. ITINERARY\n- Per day: pagi, siang, sore/malam\n- No repetition across days\n- Keep realistic & simple\n\n8. OUTPUT FORMAT (STRICT)\n\n## 🗺️ Itinerary\nHari X - Jakarta\n\nPagi (08:00 - 11:00) - [cuaca]\n- Activity\n- Activity\n\nSiang (12:00 - 15:00) - [cuaca]\n- Activity\n- Activity\n\nSore/Malam (16:00 - 20:00) - [cuaca]\n- Activity\n- Activity\n\n(repeat for multiple days)\n\n---\n\nOUTPUT RULES:\n- No intro\n- No explanation\n- Only itinerary\n- Must follow format exactly"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 3,
+      "position": [
+        1152,
+        1552
+      ],
+      "id": "34d2f383-6124-446d-8d1d-5ee09edeb167",
+      "name": "Itinerary Agent tool"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use this tool to get weather information for Jakarta based on a specific date.\n\nThe tool returns weather data including temperature and weather_code.\n\nInterpret the weather_code as follows:\n- 0 → clear sky (outdoor recommended)\n- 1, 2, 3 → partly cloudy (outdoor still suitable)\n- 45, 48 → fog (outdoor with caution)\n- 51–67, 80–82 → rain (indoor activities recommended)\n- 95, 96, 99 → thunderstorm (avoid outdoor, strongly recommend indoor)\n\nWhen using this tool:\n- Always determine whether the condition is suitable for indoor or outdoor activities\n- Use this information to adjust travel recommendations and itinerary\n\nDo not return raw weather_code to the user—always convert it into a simple condition (clear, cloudy, rain, storm) and recommendation (indoor or outdoor).",
+        "url": "=https://api.open-meteo.com/v1/forecast?latitude=-6.1818&longitude=106.8223&hourly=temperature_2m,weather_code&timezone=Asia%2FBangkok&forecast_days=14",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.4,
+      "position": [
+        1344,
+        1760
+      ],
+      "id": "ee6de251-220a-42ba-9d5c-e7e951106e59",
+      "name": "API Weather1"
+    },
+    {
+      "parameters": {
+        "content": "## Spot Photo Tools\n",
+        "height": 560,
+        "width": 448,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        608,
+        1440
+      ],
+      "typeVersion": 1,
+      "id": "6ad37266-e813-44e2-9634-361f02bae5e9",
+      "name": "Sticky Note1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Itinerary Agent ",
+        "height": 544,
+        "width": 400,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1104,
+        1440
+      ],
+      "typeVersion": 1,
+      "id": "26fdf412-32ab-4306-951f-3c4a90f8590e",
+      "name": "Sticky Note2",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## SQL Tools",
+        "height": 448,
+        "width": 518,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        32,
+        1440
+      ],
+      "typeVersion": 1,
+      "id": "38c221b8-1efe-4af7-a42a-3c4308d28f07",
+      "name": "Sticky Note",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Input Message').item.json.message.from.id }}",
+        "text": "Halo! 👋\n\nSaya Travel Assistant ✈️\nSiap bantu kamu rencanakan trip ke Jakarta dengan cepat & praktis.\n\nBisa bantu:\n• ✈️ Flight (tiket pesawat)\n• 🏨 Hotel (area & bintang)\n• 📸 Spot foto (sesuai waktu & vibe)\n• 🗺️ Itinerary (tanggal, rencana jalan + cuaca)\n\nContoh request:\n• \"Cari flight Padang ke Jakarta tanggal 27 April 2026\"\n• \"Hotel bintang 4 didaerah kemang jakarta\"\n• \"Spot foto yang bagus di Jakarta pada malam hari\"\n• \"Bikin itinerary Jakarta 2 hari tanggal 25 April 2026\" \n\nTinggal ketik kebutuhan kamu, nanti saya carikan yang paling relevan 👍\n",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -64,
+        1040
+      ],
+      "id": "77fc279d-4f25-4ebd-8656-5e08bd6357b9",
+      "name": "Welcome Message",
+      "webhookId": "01eea0e8-974b-455b-ab53-e60c679571eb",
+      "credentials": {
+        "telegramApi": {
+          "id": "WYNPHX6k8IJq0p0L",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        96,
+        1744
+      ],
+      "id": "13ebab66-5c7d-4898-9935-423285e78e00",
+      "name": "GPT 5 Mini",
+      "credentials": {
+        "openAiApi": {
+          "id": "28DBzgcYPZ9x8af2",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        800,
+        1856
+      ],
+      "id": "f5a070da-d9a6-4251-b1c6-39d0114202ab",
+      "name": "Text embedding 3 small",
+      "credentials": {
+        "openAiApi": {
+          "id": "28DBzgcYPZ9x8af2",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        656,
+        1744
+      ],
+      "id": "355b8693-8255-408d-af58-ca6d367456f5",
+      "name": "GPT 5 Mini3",
+      "credentials": {
+        "openAiApi": {
+          "id": "28DBzgcYPZ9x8af2",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        1152,
+        1776
+      ],
+      "id": "1aff5c13-7a63-4a65-bcbd-7c4d2c52ee6a",
+      "name": "GPT 5 Mini2",
+      "credentials": {
+        "openAiApi": {
+          "id": "28DBzgcYPZ9x8af2",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Itinerary Chatbot \n",
+        "height": 1072,
+        "width": 2096,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -560,
+        992
+      ],
+      "typeVersion": 1,
+      "id": "d74de4ee-5c6e-41d6-b2e1-f1530605e845",
+      "name": "Sticky Note3"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Welcome Message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Parse Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Input Message": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Message": {
+      "main": [
+        [
+          {
+            "node": "Main Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Main Agent": {
+      "main": [
+        [
+          {
+            "node": "Output Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 5 Mini1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Main Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Main Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Travel Agent Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Main Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Flight Search1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Travel Agent Tool",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hotel Search1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Travel Agent Tool",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spot Photo Agent Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Main Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spot Photo Vector Store": {
+      "ai_tool": [
+        [
+          {
+            "node": "Spot Photo Agent Tool",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Itinerary Agent tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Main Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "API Weather1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Itinerary Agent tool",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 5 Mini": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Travel Agent Tool",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text embedding 3 small": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Spot Photo Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 5 Mini3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Spot Photo Agent Tool",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 5 Mini2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Itinerary Agent tool",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "418c750e-f10b-4187-b8de-37412b9577dd",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ae534c8b378b8cdba2f6b424bf398289ead40d3d868ce0e87409d7bb0f017004"
+  },
+  "id": "FBx21XynaR1H3IaD",
+  "tags": []
+}
